@@ -11,3 +11,4 @@ arxiv
 pytube
 wikipedia
 langchain
+whitenoise
