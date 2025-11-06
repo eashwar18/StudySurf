@@ -1,3 +1,4 @@
+import os
 """
 Django settings for backend project.
 
@@ -144,3 +145,5 @@ SEARCH_ENGINE_IDS = {
     'electrical': '84b21d470c12a4b0f',
     'mech': '54071258a3484451d',
 }
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
