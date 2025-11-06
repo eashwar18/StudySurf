@@ -9,10 +9,14 @@ export default defineConfig({
   },
   plugins: [react()],
   resolve: {
-    alias: {
-      // This must match your tsconfig.json and points to the project root
-      '@': path.resolve(fileURLToPath(new URL('.', import.meta.url)), './'),
-      '@shared': path.resolve(fileURLToPath(new URL('.', import.meta.url)), 'shared')
-    }
+    // Inside resolve: { }
+alias: {
+  // This tells Vite "@" is the folder './client'
+  '@': path.resolve(fileURLToPath(new URL('.', import.meta.url)), './client'),
+
+  // This is the CRITICAL FIX: The missing '.' in the alias value
+  '@/': path.resolve(fileURLToPath(new URL('.', import.meta.url)), './client/'), 
+  '@shared': path.resolve(fileURLToPath(new URL('.', import.meta.url)), 'shared')
+}
   }
 });
