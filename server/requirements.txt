@@ -12,3 +12,4 @@ pytube
 wikipedia
 langchain
 whitenoise
+dj-database-url
