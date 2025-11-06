@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
-import path from 'path' // We still need path
+import path from 'path'
+import { fileURLToPath, URL } from 'url';
 
 export default defineConfig({
   build: {
@@ -9,10 +10,11 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      // This tells Vite "a" is the folder './client'
-      // and "@shared" is the folder './shared'
-      'a': path.resolve(__dirname, 'client'), 
-      '@shared': path.resolve(__dirname, 'shared')
+      // This one matches your code
+      '@': path.resolve(fileURLToPath(new URL('.', import.meta.url)), 'client'),
+
+      // This one matches the @shared from your tsconfig
+      '@shared': path.resolve(fileURLToPath(new URL('.', import.meta.url)), 'shared')
     }
   }
 })
