@@ -10,8 +10,8 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      // This one matches your 119 search results
-      '@': path.resolve(fileURLToPath(new URL('.', import.meta.url)), 'client'),
+      // This one fixes your build error
+      'a': path.resolve(fileURLToPath(new URL('.', import.meta.url)), 'client'),
 
       // This one matches the @shared from your tsconfig
       '@shared': path.resolve(fileURLToPath(new URL('.', import.meta.url)), 'shared')
