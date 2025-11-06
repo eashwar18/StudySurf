@@ -157,7 +157,7 @@ SEARCH_ENGINE_IDS = {
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '..', 'dist') 
+    os.path.join(BASE_DIR, '..', '..', 'dist') 
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True 
