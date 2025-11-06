@@ -1,18 +1,19 @@
-const { defineConfig } = require('vite');
-const react = require('@vitejs/plugin-react-swc');
-const path = require('path');
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import path from 'path'
+import { fileURLToPath, URL } from 'url';
 
-// This file is now a .cjs module, so __dirname is guaranteed to be available.
-module.exports = defineConfig({
+export default defineConfig({
   build: {
     outDir: "dist/spa",
   },
   plugins: [react()],
   resolve: {
     alias: {
-      // This will now work
-      '@': path.resolve(__dirname, 'client'),
-      '@shared': path.resolve(__dirname, 'shared')
+      // This tells Vite "@" is the project root, which typically contains the components/
+      '@': path.resolve(fileURLToPath(new URL('.', import.meta.url)), './'), 
+
+      '@shared': path.resolve(fileURLToPath(new URL('.', import.meta.url)), 'shared')
     }
   }
-});
+})
