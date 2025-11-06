@@ -28,7 +28,7 @@
     /* Path mapping */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./client/*"],
+      "a/*": ["./client/*"],
       "@shared/*": ["./shared/*"]
     }
   },
