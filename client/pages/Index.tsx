@@ -100,3 +100,4 @@ const featureCards: BentoCard[] = [
     icon: <MessageSquare className="h-5 w-5" />,
   },
 ];
+
