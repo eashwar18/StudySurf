@@ -3,8 +3,8 @@ import "./global.css";
 import { Toaster } from "./components/ui/toaster";
 import { createRoot } from "react-dom/client";
 import { Toaster as Sonner } from "./components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { TooltipProvider } from "./components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from ".tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
@@ -13,7 +13,7 @@ import SurfChat from "./pages/SurfChat";
 import Learn from "./pages/Learn";
 import BookMark from "./pages/BookMark";
 import NotFound from "./pages/NotFound";
-import SiteLayout from "@/components/layout/SiteLayout";
+import SiteLayout from "./components/layout/SiteLayout";
 import ProtectedRoute from "./ProtectedRoute"
 import PublicOnlyRoute from "./PublicOnlyRoute";
 
